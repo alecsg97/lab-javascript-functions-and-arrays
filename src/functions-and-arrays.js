@@ -21,15 +21,15 @@ function findLongestWord(words) {
     return words[0];
   }
 
-  let wordIndex = 0;
+  let longWord = 0;
   
   for (let i=1; i<words.length; i++){
     
-    if (words[wordIndex].length<words[i].length){
+    if (words[longWord].length<words[i].length){
       index = i;
     } 
   }
-  return words[wordIndex];
+  return words[longWord];
 
 
 }
@@ -65,17 +65,15 @@ function sumNumbers(numbers) {
 
 // Iteration #3.1 Bonus:
 function sum(numbersv2) {
-  const sum = 0
-
-  if (numbersv2.length === 0){
-  return 0;
+return numbersv2.reduce((accum, current)=>{
+  if(typeof current === 'string') {
+    return accum + current.length;
+  } else {
+    return accum + Number(current)
   }
-
-  if (numbersv2.length === 1){
-    return numbersv2[0];
-  }
-  return 0;
+}, 0)
 }
+throw "Unsupported data type sir or ma'am";
 
 
 
